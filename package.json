@@ -11,6 +11,7 @@
     "autoprefixer": "^9",
     "core-js": "^3.6.5",
     "firebase": "^8.6.8",
+    "generate-password": "^1.6.0",
     "git": "^0.1.5",
     "postcss": "^7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
