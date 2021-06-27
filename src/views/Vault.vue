@@ -6,6 +6,18 @@
     <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" @submit.prevent="onSubmit">
       <div class="mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="website">
+          Name
+        </label>
+        <input
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="name"
+          type="text"
+          placeholder="Name"
+          v-model="form.name"
+        />
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="website">
           Website
         </label>
         <input
@@ -60,7 +72,9 @@
   <div
     style="height: 300px; width: 360px;"
     class="border bg-white shadow-lg rounded-2xl m-auto mt-2"
-  ></div>
+  >
+  
+  </div>
 </template>
 
 <script>
@@ -68,10 +82,11 @@ import { createUser } from "../../firebase";
 import { reactive } from "vue";
 export default {
   setup() {
-    const form = reactive({ website: "", username: "", password: "" });
+    const form = reactive({ name:"" ,website: "", username: "", password: "" });
 
     const onSubmit = async () => {
       await createUser({ ...form });
+      form.name="";
       form.website = "";
       form.username = "";
       form.password = "";
