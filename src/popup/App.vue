@@ -4,6 +4,7 @@
     class=" overflow-hidden shadow-lg bg-gray-300 border-0"
   >
     <div v-show="!$store.state.isLogged">
+      <router-view />
       <appheader />
     </div>
     <div v-show="$store.state.isLogged"><login /></div>
