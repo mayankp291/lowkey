@@ -87,16 +87,19 @@
           <td class="py-4 px-3 border-b border-grey-light">{{ name }}</td>
           <td class="py-4 px-3 border-b border-grey-light">{{ username }}</td>
           <td class="py-4 px-3 border-b border-grey-light">
-            <button
-             
-              class="text-grey-lighter font-bold py-1 px-10 rounded text-xs bg-green hover:bg-green-dark"
-              >Edit</button
-            >
+            <router-link :to="`/vault/edit/${id}`">
+              <button
+                class="text-grey-lighter font-bold py-1 px-10 rounded text-xs bg-green hover:bg-green-dark"
+              >
+                Edit
+              </button>
+            </router-link>
             <button
               @click="deleteUser(id)"
               class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark"
-              >Delete</button 
             >
+              Delete
+            </button>
           </td>
         </tr>
       </tbody>
@@ -109,7 +112,7 @@ import { createUser, useLoadUsers, deleteUser } from "../../firebase";
 import { reactive } from "vue";
 export default {
   setup() {
-    const users= useLoadUsers()
+    const users = useLoadUsers();
     const form = reactive({
       name: "",
       website: "",
