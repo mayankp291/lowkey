@@ -3,23 +3,22 @@
     style="height: 50px; width: 360px;"
     class="border bg-white shadow-lg rounded-2xl mt-4 m-2"
   >
-       <div class="flex">
-        <input
-          class="shadow appearance-none border rounded w-2/3 px-3 m-2 flex-auto  text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="username"
-          type="text"
-          placeholder="Search"
-        
-        />
-      
-            <router-link to="/vault/add/">
-              <button
-                class=" m-2 flex-auto text-grey-lighter font-bold py-1 px-7 border rounded text-xs bg-green hover:bg-green-dark"
-              >
-                Add
-              </button>
-            </router-link>
-  </div>
+    <div class="flex">
+      <input
+        class="shadow appearance-none border rounded w-2/3 px-3 m-2 flex-auto  text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="username"
+        type="text"
+        placeholder="Search"
+      />
+
+      <router-link to="/vault/add/">
+        <button
+          class=" m-2 flex-auto text-grey-lighter font-bold py-1 px-7 border rounded text-xs bg-green hover:bg-green-dark"
+        >
+          Add
+        </button>
+      </router-link>
+    </div>
   </div>
   <div
     style="height: 400px; width: 360px;"
@@ -89,7 +88,7 @@ export default {
 <style>
 @import url(https://pro.fontawesome.com/releases/v5.10.0/css/all.css);
 ::-webkit-scrollbar {
-    width: 0;
-    background: transparent; /* make scrollbar transparent */
+  width: 0;
+  background: transparent; /* make scrollbar transparent */
 }
 </style>

@@ -1,9 +1,8 @@
 <template>
-  <div style="height: 300px; width: 360px;"
-    class="border bg-white shadow-lg rounded-2xl m-auto mt-2 overflow-y-scroll">
-    <h3>Edit users</h3>
+  <div style="height: 480px; width: 360px;"
+    class="border bg-white shadow-lg rounded-2xl m-auto mt-4 overflow-y-scroll">
     <form
-      class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+      class="bg-white rounded px-8 pt-6 pb-8 mb-4"
       @submit.prevent="update"
     >
       <div class="mb-4">
