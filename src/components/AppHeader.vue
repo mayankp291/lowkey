@@ -16,7 +16,7 @@
           </a>
         </div>
       </router-link>
-      <router-link to="/about">
+      <router-link to="/vault">
         <div class="flex-1 group">
           <a
             class="flex items-end justify-center text-center mx-auto px-4 pt-2 w-full text-gray-400 group-hover:text-indigo-500"
@@ -31,7 +31,7 @@
           </a>
         </div>
       </router-link>
-      <router-link to="/vault">
+      <router-link to="/generator">
         <div class="flex-1 group">
           <a
             href="#"
@@ -47,7 +47,7 @@
           </a>
         </div>
       </router-link>
-      <router-link to="/testing">
+      <router-link to="/">
         <div class="flex-1 group">
           <a
             href="#"

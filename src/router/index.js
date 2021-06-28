@@ -22,17 +22,17 @@ const routes = [
   },
   {
     path: "/vault/add",
-    name: "AddDetails",
+    name: "Add Details",
     component: () => import("../views/AddLogin.vue"),
   },
   {
     path: "/vault/edit/:id",
-    name: "Edit",
+    name: "Edit Login Details",
     component: () => import("../views/Edit.vue"),
   },
   {
-    path: "/testing",
-    name: "Test",
+    path: "/generator",
+    name: "Password Generator",
     component: () => import("../views/Generator.vue"),
   },
 ];
