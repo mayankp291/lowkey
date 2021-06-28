@@ -1,4 +1,4 @@
-# lowkey
+# LOWKEY
 
 ## Project setup
 ```
