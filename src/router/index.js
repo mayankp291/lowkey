@@ -1,7 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import Vault from '../views/Vault.vue'
-import Testing from '../views/Testing.vue'
 
 const routes = [
   {
@@ -35,7 +33,7 @@ const routes = [
   {
     path: "/testing",
     name: "Test",
-    component: () => import("../views/test2.vue"),
+    component: () => import("../views/Generator.vue"),
   },
 ];
 
