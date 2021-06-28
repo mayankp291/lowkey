@@ -23,6 +23,11 @@ const routes = [
     component: () => import("../views/Vault.vue"),
   },
   {
+    path: "/vault/add",
+    name: "AddDetails",
+    component: () => import("../views/AddLogin.vue"),
+  },
+  {
     path: "/vault/edit/:id",
     name: "Edit",
     component: () => import("../views/Edit.vue"),

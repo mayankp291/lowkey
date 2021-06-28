@@ -1,92 +1,45 @@
 <template>
   <div
-    style="height: 180px; width: 360px;"
-    class="border bg-white shadow-lg rounded-2xl m-auto mt-2 overflow-y-scroll"
+    style="height: 50px; width: 360px;"
+    class="border bg-white shadow-lg rounded-2xl mt-4 m-2"
   >
-    <form
-      class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
-      @submit.prevent="onSubmit"
-    >
-      <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="website">
-          Name
-        </label>
+       <div class="flex">
         <input
-          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="name"
-          type="text"
-          placeholder="Name"
-          v-model="form.name"
-        />
-      </div>
-      <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="website">
-          Website
-        </label>
-        <input
-          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          class="shadow appearance-none border rounded w-2/3 px-3 m-2 flex-auto  text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="username"
           type="text"
-          placeholder="Website"
-          v-model="form.website"
+          placeholder="Search"
+        
         />
-      </div>
-      <div class="mb-4">
-        <label
-          class="block text-gray-700 text-sm font-bold mb-2"
-          for="username"
-        >
-          Username
-        </label>
-        <input
-          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="username"
-          type="text"
-          placeholder="Username"
-          v-model="form.username"
-        />
-      </div>
-      <div class="mb-6">
-        <label
-          class="block text-gray-700 text-sm font-bold mb-2"
-          for="password"
-        >
-          Password
-        </label>
-        <input
-          class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-          id="password"
-          type="password"
-          placeholder="******************"
-          v-model="form.password"
-        />
-        <p class="text-red-500 text-xs italic">Enter password.</p>
-      </div>
-      <div class="flex items-center justify-between">
-        <button
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          type="submit"
-        >
-          Submit
-        </button>
-      </div>
-    </form>
+      
+            <router-link to="/vault/add/">
+              <button
+                class=" m-2 flex-auto text-grey-lighter font-bold py-1 px-7 border rounded text-xs bg-green hover:bg-green-dark"
+              >
+                Add
+              </button>
+            </router-link>
+  </div>
   </div>
   <div
-    style="height: 300px; width: 360px;"
-    class="border bg-white shadow-lg rounded-2xl m-auto mt-2 overflow-y-scroll"
+    style="height: 400px; width: 360px;"
+    class="border bg-white shadow-lg rounded-2xl m-auto mt-4 overflow-y-scroll"
   >
     <table class="table-auto w-full text-left">
       <!--Border collapse doesn't work on this site yet but it's available in newer tailwind versions -->
-      
+
       <tbody>
         <tr
           class="hover:bg-grey-lighter break-words m-auto"
           v-for="{ id, name, username } in users"
           :key="id"
         >
-          <td class="py-4 px-3 border-b border-grey-light text-xs font-bold">{{ name }}</td>
-          <td class="py-4 px-3 border-b border-grey-light text-xs">{{ username }}</td>
+          <td class="py-4 px-3 border-b border-grey-light text-xs font-bold">
+            {{ name }}
+          </td>
+          <td class="py-4 px-3 border-b border-grey-light text-xs">
+            {{ username }}
+          </td>
           <td class="py-4 px-3 border-b border-grey-light">
             <router-link :to="`/vault/edit/${id}`">
               <button
@@ -133,4 +86,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+@import url(https://pro.fontawesome.com/releases/v5.10.0/css/all.css);
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent; /* make scrollbar transparent */
+}
+</style>
