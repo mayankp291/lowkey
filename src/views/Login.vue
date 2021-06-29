@@ -1,6 +1,6 @@
 <template>
   <div
-    class="text-4xl text-center pt-10  font-bold tracking-wide text-indigo-900 antialiased"
+    class="text-4xl text-center pt-10 filter drop-shadow-lg font-bold tracking-wide text-grey-500 antialiased"
   >
     LOWKEY
   </div>
