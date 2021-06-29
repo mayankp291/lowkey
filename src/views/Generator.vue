@@ -5,15 +5,21 @@
 
   <body class="bg-gray-300">
     <main id="app">
-      <div class="flex flex-col mx-auto my-8 text-base">
-        <div
+      <div class="flex flex-col mx-auto my-8 text-base" >
+        <!-- <div
           class="flex flex-col items-between w-96 mx-auto bg-gray-200 shadow-2xl rounded-2xl"
+        > -->
+                <div
+          class="flex flex-col items-between w-96 mx-auto bg-white shadow-2xl rounded-2xl"
         >
           <h1 class="text-center mt-4 text-gray-500 font-bold text-xl">
             {{ title }}
           </h1>
-          <div
+          <!-- <div
             class="flex flex-col mt-4 mb-4 py-6 my-auto items-center justify-center bg-gray-300"
+          > -->
+                    <div
+            class="flex flex-col mt-4 mb-4 py-6 my-auto items-center justify-center"
           >
             <div
               v-if="copied"
@@ -85,8 +91,12 @@
             </div>
           </div>
           <div class="justify-center items-end">
-            <button
+            <!-- <button
               class="inline-block w-full py-3 bg-gray-300 text-gray-600 font-bold rounded-b-lg focus:outline-none"
+              v-on:click="generatePassword"
+            > -->
+                        <button
+              class="inline-block w-full py-3 bg-white text-gray-600 font-bold rounded-b-2xl focus:outline-none"
               v-on:click="generatePassword"
             >
               Generate

@@ -30,7 +30,7 @@
       <tbody>
         <tr
           class="hover:bg-grey-lighter break-words m-auto"
-          v-for="{ id, name, username } in users"
+          v-for="{ id, name, username, password } in users"
           :key="id"
         >
           <td class="py-4 px-3 border-b border-grey-light text-xs font-bold">
@@ -40,19 +40,34 @@
             {{ username }}
           </td>
           <td class="py-4 px-3 border-b border-grey-light">
-            <router-link :to="`/vault/edit/${id}`">
-              <button
-                class="text-grey-lighter font-bold py-1 px-10 rounded text-xs bg-green hover:bg-green-dark"
-              >
-                Edit
-              </button>
-            </router-link>
             <button
+              @click="copy(username)"
+              class="fas fa-user text-base pt-1 mb-1 m-1 block" title="Copy Username"
+            ></button>
+            <button
+              @click="copy(password)"
+              class="fas fa-key text-base pt-1 mb-1 m-1 block"
+              title="Copy Password"
+            ></button>
+            <router-link :to="`/vault/edit/${id}`">
+              <!-- <button
+                class="text-grey-lighter font-bold py-1 px-10 rounded text-xs bg-green hover:bg-green-dark"
+              > 
+                Edit 
+              </button> -->
+              <button class="fa fa-pencil text-base pt-1 mb-1 m-1 block" title="Edit"></button>
+            </router-link>
+            <!-- <button
               @click="deleteUser(id)"
               class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark "
             >
               Delete
-            </button>
+            </button> -->
+            <button
+              @click.once="deleteUser(id)"
+              class="fa fa-trash text-base pt-1 mb-1 m-1 block"
+              title="Delete"
+            ></button>
           </td>
         </tr>
       </tbody>
@@ -81,6 +96,15 @@ export default {
       form.password = "";
     };
     return { form, onSubmit, users, deleteUser };
+  },
+  methods: {
+    async copy(id) {
+      await navigator.clipboard.writeText(id);
+      this.copied = true;
+      setTimeout(() => {
+        this.copied = false;
+      }, 3000);
+    },
   },
 };
 </script>
