@@ -1,7 +1,7 @@
 <template>
   <div
-    style="height: 450px; width: 360px;"
-    class="border bg-white shadow-lg rounded-2xl m-auto mt-4"
+    style="height: 480px; width: 360px;"
+    class="border bg-white shadow-lg rounded-2xl m-auto mt-4 overflow-y-scroll"
   >
     <form class="px-8 pt-6 pb-8 mb-4" @submit.prevent="onSubmit">
       <div class="mb-4">
