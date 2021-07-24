@@ -7,7 +7,7 @@ export default createStore({
     isLogged: false,
     isPasted: false,
     username: "",
-    password: ""
+    password: "",
   },
   mutations: {
     login(state) {
@@ -21,8 +21,15 @@ export default createStore({
     },
     copydata(state, user) {
       state.username = user.username;
-      localStorage.setItem("username", user.username);
-      localStorage.setItem("password", user.password);
+      chrome.storage.local.set({ username: user.username }, function() {
+        console.log("Value is set to " + user.username);
+      });
+      chrome.storage.local.set({ password: user.password }, function() {
+        console.log("Value is set to " + user.password);
+      });
+      chrome.storage.local.set({ isPasted: true }, function() {
+        console.log("Value is set to " + true);
+      });
       state.password = user.password;
       state.isPasted = true;
     },
@@ -30,4 +37,3 @@ export default createStore({
   actions: {},
   modules: {},
 });
-
