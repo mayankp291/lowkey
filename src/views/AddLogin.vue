@@ -58,7 +58,6 @@
           v-model="form.password"
         />
       </div>
-   
       <div class="mb-6">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="website">
           TOTP Secret
@@ -68,7 +67,7 @@
           id="totp"
           type="text"
           placeholder="TOTP Secret"
-          v-model="form.website"
+          v-model="form.totp"
         />
       </div>
       <div class="flex items-center justify-between">
@@ -95,6 +94,7 @@ export default {
       website: "",
       username: "",
       password: "",
+      totp: "",
     });
 
     const onSubmit = async () => {
