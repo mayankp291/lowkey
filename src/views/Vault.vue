@@ -32,6 +32,12 @@
           class="hover:bg-grey-lighter break-words m-auto"
           v-for="{ id, name, username, password } in users"
           :key="id"
+          @click="
+            this.$store.commit('copydata', {
+              username: username,
+              password: password,
+            })
+          "
         >
           <td class="py-4 px-3 border-b border-grey-light text-xs font-bold">
             {{ name }}
@@ -42,7 +48,8 @@
           <td class="py-4 px-3 border-b border-grey-light">
             <button
               @click="copy(username)"
-              class="fas fa-user text-base pt-1 mb-1 m-1 block" title="Copy Username"
+              class="fas fa-user text-base pt-1 mb-1 m-1 block"
+              title="Copy Username"
             ></button>
             <button
               @click="copy(password)"
@@ -55,7 +62,10 @@
               > 
                 Edit 
               </button> -->
-              <button class="fa fa-pencil text-base pt-1 mb-1 m-1 block" title="Edit"></button>
+              <button
+                class="fa fa-pencil text-base pt-1 mb-1 m-1 block"
+                title="Edit"
+              ></button>
             </router-link>
             <!-- <button
               @click="deleteUser(id)"
@@ -70,6 +80,8 @@
             ></button>
           </td>
         </tr>
+        {{$store.state.username}}
+        {{$store.state.password}}
       </tbody>
     </table>
   </div>

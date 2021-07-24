@@ -5,3 +5,6 @@ browser.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     file: 'content-script.js',
   });
 })
+
+localStorage.setItem("test", "testing is complete");
+
