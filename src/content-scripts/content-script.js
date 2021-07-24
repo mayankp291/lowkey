@@ -11,8 +11,12 @@ if (window.localStorage.getItem("test") === "this works") {
 
 const Locust = require("@buttercup/locust");
 
-
-
+const speakeasy = require("speakeasy");
+const secret = speakeasy.generateSecret({ length: 20 });
+var token = speakeasy.totp({
+  secret: "D7N6XSLLUZWVJGXQ",
+});
+console.log(token);
 
 // if (store.state.isPasted === true) {
 //   getLoginTarget().enterDetails(store.state.username, store.state.password);
@@ -52,5 +56,7 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
   }
  Locust.getLoginTarget().enterDetails(username, password);
 });
+
+
 
 console.log(window.localStorage.getItem("test"));
