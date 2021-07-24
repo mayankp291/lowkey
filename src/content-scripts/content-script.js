@@ -1,11 +1,11 @@
 console.log("Hello from the content-script");
 
-if (window.localStorage.getItem("test") === "this works") {
-  let para = document.getElementsByTagName("p");
-  for (i of para) {
-    i.style["background-color"] = "#FF00FF";
-  }
-}
+// if (window.localStorage.getItem("test") === "this works") {
+//   let para = document.getElementsByTagName("p");
+//   for (i of para) {
+//     i.style["background-color"] = "#FF00FF";
+//   }
+// }
 
 //import store from '../store'
 
