@@ -103,6 +103,7 @@ export default {
       form.website = "";
       form.username = "";
       form.password = "";
+      form.totp = "";
       router.push("/vault");
     };
     return { form, onSubmit };

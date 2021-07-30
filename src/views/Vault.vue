@@ -30,7 +30,7 @@
       <tbody>
         <tr
           class="hover:bg-grey-lighter break-words m-auto"
-          v-for="{ id, name, username, password } in users"
+          v-for="{ id, name, username, password, totp } in users"
           :key="id"
           @click="
             this.$store.commit('copydata', {
@@ -46,6 +46,12 @@
             {{ username }}
           </td>
           <td class="py-4 px-3 border-b border-grey-light">
+            <button
+              v-if="totp != null"
+              @click="createtoken(totp)"
+              class="fas fa-lock text-base pt-1 mb-1 m-1 block"
+              title="Copy TOTP"
+            ></button>
             <button
               @click="copy(username)"
               class="fas fa-user text-base pt-1 mb-1 m-1 block"
@@ -80,8 +86,8 @@
             ></button>
           </td>
         </tr>
-        {{$store.state.username}}
-        {{$store.state.password}}
+        <!-- {{$store.state.username}}
+        {{$store.state.password}} -->
       </tbody>
     </table>
   </div>
@@ -90,6 +96,7 @@
 <script>
 import { createUser, useLoadUsers, deleteUser } from "../../firebase";
 import { reactive } from "vue";
+const speakeasy = require("speakeasy");
 export default {
   setup() {
     const users = useLoadUsers();
@@ -116,6 +123,12 @@ export default {
       setTimeout(() => {
         this.copied = false;
       }, 3000);
+    },
+    createtoken(secret) {
+      var token = speakeasy.totp({
+        secret: secret,
+      });
+      copy(token);
     },
   },
 };
