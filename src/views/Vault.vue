@@ -117,6 +117,13 @@ export default {
     return { form, onSubmit, users, deleteUser };
   },
   methods: {
+      createtoken(secret) {
+      var token = speakeasy.totp({
+        secret: secret,
+      });
+      console.log(token);
+      this.copy(token);
+    },
     async copy(id) {
       await navigator.clipboard.writeText(id);
       this.copied = true;
@@ -124,12 +131,7 @@ export default {
         this.copied = false;
       }, 3000);
     },
-    createtoken(secret) {
-      var token = speakeasy.totp({
-        secret: secret,
-      });
-      copy(token);
-    },
+
   },
 };
 </script>
