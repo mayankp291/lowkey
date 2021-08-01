@@ -4,7 +4,7 @@ import VuexWebExtensions from "vuex-webextensions";
 export default createStore({
   plugins: [VuexWebExtensions()],
   state: {
-    isLogged: false,
+    isLogged: window.localStorage.getItem("isLogged"),
     isPasted: false,
     username: "",
     password: "",
@@ -12,9 +12,17 @@ export default createStore({
   mutations: {
     login(state) {
       state.isLogged = true;
+      window.localStorage.setItem("isLogged", true);
+      // chrome.storage.local.set({ isLogged: true }, function() {
+      //   console.log("Value is set to " + true);
+      // });
     },
     logout(state) {
       state.isLogged = false;
+      window.localStorage.setItem("isLogged", false);
+      // chrome.storage.local.set({ isLogged: false }, function() {
+      //   console.log("Value is set to " + false);
+      // });
     },
     pasted(state) {
       state.isPasted = false;

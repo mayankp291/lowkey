@@ -93,7 +93,7 @@ export default {
       website: "",
       username: "",
       password: "",
-      totp:"",
+      totp:null,
     });
     onMounted(async () => {
       const user = await getUser(userId.value);
@@ -111,7 +111,7 @@ export default {
       form.website = "";
       form.username = "";
       form.password = "";
-      form.totp = "";
+      form.totp = null;
     };
     return { form, update };
   },

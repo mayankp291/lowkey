@@ -9,6 +9,10 @@ browser.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   chrome.storage.local.set({ password: null }, function() {
     console.log("Value is set to " + null);
   });
+  // chrome.storage.local.set({ isLogged: null }, function() {
+  //     console.log("Value is set to " + null);
+  //   });
+  window.localStorage.setItem("isLogged", null);
   browser.tabs.executeScript({
     file: "content-script.js",
   });

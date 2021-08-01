@@ -94,7 +94,7 @@ export default {
       website: "",
       username: "",
       password: "",
-      totp: "",
+      totp: null,
     });
 
     const onSubmit = async () => {
@@ -103,7 +103,7 @@ export default {
       form.website = "";
       form.username = "";
       form.password = "";
-      form.totp = "";
+      form.totp = null;
       router.push("/vault");
     };
     return { form, onSubmit };

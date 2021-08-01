@@ -47,7 +47,7 @@
           </a>
         </div>
       </router-link>
-      <router-link to="/">
+      <router-link to="/settings">
         <div class="flex-1 group">
           <a
             href="#"
