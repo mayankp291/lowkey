@@ -1,0 +1,45 @@
+{
+  "manifest_version": 2,
+  "name": "__MSG_extName__",
+  "homepage_url": "http://localhost:8080/",
+  "description": "A Vue Browser Extension",
+  "default_locale": "en",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "<all_urls>",
+    "*://*/*"
+  ],
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "js/content-script.js"
+      ]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "__MSG_extName__",
+    "default_icon": {
+      "19": "icons/19.png",
+      "38": "icons/38.png"
+    }
+  },
+  "version": "0.1.0",
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApJxUYbgHNynMkTP4MA6LMmii1J/tbqOfk1DhmnXCWJk72iNoZUj+S7f6sxHlQN5b+0GagxqTcKfFsWPY3rwPr9cJ6rH0ET7psyAnWz3uuczvkG0srAOCfTdXpnfSEveYVNnMQ9f1PIBJ+r2MPjx7s/gXFYAhAt0j3RMnXl+GYQkCaDMFc6figPlTLfby7NO0SlqGukyNpczGJc9FGzjHBqCKsMXCKMnIa+QSObIxnonp70tnqov0rHStww9aV2/6yKAMRT/x3qnFH9Bcb17OMHlP09fAad7AeKw9fQxgasrAlibBh+KJsDTQRt5RtY2haVPIUKNIDFb3jfZxElrZ5wIDAQAB"
+}
